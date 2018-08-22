@@ -94,6 +94,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\AlunoController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -111,8 +112,18 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Controllers\" />
     <Folder Include="Models\" />
+    <Folder Include="Views\Aluno\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\GestaoAluno.BLL\GestaoAluno.BLL.csproj">
+      <Project>{778393da-a48a-4cd4-a99d-3064c02e688f}</Project>
+      <Name>GestaoAluno.BLL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\GestaoAluno.MOD\GestaoAluno.MOD.csproj">
+      <Project>{d428bce0-0110-4ee0-8450-f28be25c9957}</Project>
+      <Name>GestaoAluno.MOD</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
