@@ -1,4 +1,6 @@
 ﻿using GestaoAluno.BLL;
+using GestaoAluno.MOD;
+using GestaoAluno.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -16,6 +18,27 @@ namespace GestaoAluno.Controllers
         {
             _alunoBLL = new AlunoBLL();
         }
+
+
+        [HttpPost]
+        public bool CadastrarAluno(AlunoModel model)
+        {
+            if (ModelState.IsValid)
+            {
+                var aluno = new AlunoMOD()
+                {
+                    Nome = model.Nome,
+                    RM = model.RM
+                };
+
+                return _alunoBLL.CadastrarAluno(aluno);
+            }
+
+            return false;
+        }
+
+        
+        [HttpGet]
         public ActionResult Index()
         {
             var alunos = _alunoBLL.RetornaAlunos();

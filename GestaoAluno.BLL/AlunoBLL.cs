@@ -20,5 +20,13 @@ namespace GestaoAluno.BLL
         {
             return _alunoDAL.RetornaAlunos();
         }
+
+        public bool CadastrarAluno(AlunoMOD aluno)
+        {
+            if (aluno.RM == 75833)
+                return false;
+
+            return _alunoDAL.CadastraAluno(aluno);
+        }
     }
 }

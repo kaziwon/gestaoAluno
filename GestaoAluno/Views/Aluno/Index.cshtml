@@ -4,9 +4,21 @@
 }
 
 
-    @foreach (var item in Model)
-    {
-        <p>Nome: @item.Nome</p>
-    }
+@foreach (var item in Model)
+{
+    <p>Nome: @item.Nome</p>
+}
 
+<label for="nome">Nome:</label>
+<input type="text" id="nome" />
+<br />
+<br />S
+<label for="rm">RM:</label>
+<input type="text" id="rm" />
+
+<button id="cadastrar">vai</button>
+@section Scripts{
+    <script src="~/Scripts/jquery-1.10.2.min.js"></script>
+    <script src="~/Scripts/cadastro.js"></script>
+}
 

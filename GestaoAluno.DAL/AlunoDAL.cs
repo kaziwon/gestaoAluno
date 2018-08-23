@@ -28,5 +28,22 @@ namespace GestaoAluno.DAL
             }
 
         }
+
+        public bool CadastraAluno(AlunoMOD aluno)
+        {
+            using (var connection = ConnectionFactory.banco())
+            {
+                #region Cadastrar
+                const string query = @"
+                                INSERT INTO 
+	                                Alunos 
+                                VALUES
+	                                (@Nome, @RM)";
+                #endregion
+
+                var linhasCadastradas = connection.Execute(query, aluno) == 1;
+                return linhasCadastradas;
+            }
+        }
     }
 }
