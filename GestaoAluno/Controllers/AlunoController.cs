@@ -18,9 +18,9 @@ namespace GestaoAluno.Controllers
         }
         public ActionResult Index()
         {
-            var x = _alunoBLL.Teste();
+            var alunos = _alunoBLL.RetornaAlunos();
 
-            return View();
+            return View(alunos);
         }
     }
 }

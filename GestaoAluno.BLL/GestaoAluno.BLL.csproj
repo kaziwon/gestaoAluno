@@ -43,5 +43,15 @@
     <Compile Include="AlunoBLL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\GestaoAluno.DAL\GestaoAluno.DAL.csproj">
+      <Project>{EDC66F92-0E01-480D-AF48-2BE8A9C69EFD}</Project>
+      <Name>GestaoAluno.DAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\GestaoAluno.MOD\GestaoAluno.MOD.csproj">
+      <Project>{D428BCE0-0110-4EE0-8450-F28BE25C9957}</Project>
+      <Name>GestaoAluno.MOD</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

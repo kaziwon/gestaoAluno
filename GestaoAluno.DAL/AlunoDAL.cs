@@ -1,4 +1,5 @@
-﻿using GestaoAluno.MOD;
+﻿using Dapper;
+using GestaoAluno.MOD;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -21,7 +22,9 @@ namespace GestaoAluno.DAL
                                     Alunos";
                 #endregion
 
-                return
+                var alunos = connection.Query<AlunoMOD>(query) as List<AlunoMOD>;
+                
+                return alunos;
             }
 
         }

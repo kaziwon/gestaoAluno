@@ -1,4 +1,6 @@
-﻿using System;
+﻿using GestaoAluno.DAL;
+using GestaoAluno.MOD;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,9 +10,15 @@ namespace GestaoAluno.BLL
 {
     public class AlunoBLL
     {
-        public int Teste()
+        private AlunoDAL _alunoDAL;
+
+        public AlunoBLL()
         {
-            return 0;
+            _alunoDAL = new AlunoDAL();
+        }
+        public List<AlunoMOD> RetornaAlunos()
+        {
+            return _alunoDAL.RetornaAlunos();
         }
     }
 }
